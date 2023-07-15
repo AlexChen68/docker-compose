@@ -6,8 +6,8 @@ services:
     restart: unless-stopped       
     command: redis-server /etc/redis/redis.conf --requirepass 1qaz@wsx?S --appendonly no
     volumes:                                                      
-      - "/home/redis/conf/redis.conf:/usr/local/etc/redis/redis.conf"
-      - "/home/redis/data:/data"
+      - "/home/docker/redis/conf/redis.conf:/usr/local/etc/redis/redis.conf"
+      - "/home/docker/redis/data:/data"
     environment:                        
       TZ: Asia/Shanghai
       LANG: en_US.UTF-8
