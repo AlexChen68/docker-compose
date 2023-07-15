@@ -1,0 +1,25 @@
+version: '3'
+services:
+  mysql:
+    # 原镜像`mysql:8.0`
+    image: registry.cn-hangzhou.aliyuncs.com/zhengqing/mysql:8.0  
+    # 容器名为'mysql8'
+    container_name: mysql8                                    
+    # 指定容器退出后的重启策略为始终重启，但是不考虑在 Docker 守护进程启动时就已经停止了的容器
+    restart: unless-stopped       
+    # 数据卷挂载路径设置，将本机目录映射到容器目录
+    volumes:                                                      
+      - "./mysql/my.cnf:/etc/mysql/my.cnf"
+      - "./mysql/data:/var/lib/mysql"
+#      - "./mysql/conf.d:/etc/mysql/conf.d"
+      - "./mysql/mysql-files:/var/lib/mysql-files"
+    # 设置环境变量，相当于 docker run 命令中的-e
+    environment:                        
+      TZ: Asia/Shanghai
+      LANG: en_US.UTF-8
+      MYSQL_ROOT_PASSWORD: root         # 设置 root 用户密码
+      MYSQL_DATABASE: zeus              # 初始化的数据库名称
+    privileged: true
+    user: root
+    ports:
+      - "3306:3306"
