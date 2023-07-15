@@ -3,9 +3,7 @@ services:
   mysql:
     image: mysql:8.0.31
     container_name: mysql                                    
-    # 指定容器退出后的重启策略为始终重启，但是不考虑在 Docker 守护进程启动时就已经停止了的容器
     restart: unless-stopped       
-    # 数据卷挂载路径设置，将本机目录映射到容器目录
     volumes:                                                      
       - "/home/docker/mysql/conf:/etc/mysql/conf.d"
       - "/home/docker/mysql/data:/var/lib/mysql"
