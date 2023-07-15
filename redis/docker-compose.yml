@@ -1,12 +1,12 @@
 version: '3'
 services:
-  mysql:
+  redis:
     image: redis:latest
     container_name: redis                                    
     restart: unless-stopped       
-    command: redis-server /etc/redis/redis.conf --requirepass 123456 --appendonly no
+    command: redis-server /etc/redis/redis.conf --requirepass 1qaz@wsx?S --appendonly no
     volumes:                                                      
-      - "/home/redis/config:/usr/local/etc/redis"
+      - "/home/redis/conf/redis.conf:/usr/local/etc/redis/redis.conf"
       - "/home/redis/data:/data"
     environment:                        
       TZ: Asia/Shanghai
