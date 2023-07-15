@@ -1,0 +1,15 @@
+version: '1'
+services:
+  mysql:
+    image: redis:latest
+    container_name: redis                                    
+    restart: unless-stopped       
+    command: redis-server /etc/redis/redis.conf --requirepass 123456 --appendonly no
+    volumes:                                                      
+      - "/home/redis/config:/usr/local/etc/redis"
+      - "/home/redis/data:/data"
+    environment:                        
+      TZ: Asia/Shanghai
+      LANG: en_US.UTF-8
+    ports:
+      - "16379:6379"
