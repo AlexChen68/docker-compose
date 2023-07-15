@@ -7,9 +7,9 @@ services:
     restart: unless-stopped       
     # 数据卷挂载路径设置，将本机目录映射到容器目录
     volumes:                                                      
-      - "/home/mysql/conf:/etc/mysql/conf.d"
-      - "/home/mysql/data:/var/lib/mysql"
-      - "/home/mysql/mysql-files:/var/lib/mysql-files"
+      - "/home/docker/mysql/conf:/etc/mysql/conf.d"
+      - "/home/docker/mysql/data:/var/lib/mysql"
+      - "/home/docker/mysql/mysql-files:/var/lib/mysql-files"
     environment:                        
       TZ: Asia/Shanghai
       LANG: en_US.UTF-8
