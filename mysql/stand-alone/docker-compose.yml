@@ -1,13 +1,13 @@
-version: '3'
+version: '3' 
 services:
   mysql:
     image: mysql:8.0.31
     container_name: mysql                                    
     restart: unless-stopped       
     volumes:                                                      
-      - "/home/docker/mysql/conf:/etc/mysql/conf.d"
-      - "/home/docker/mysql/data:/var/lib/mysql"
-      - "/home/docker/mysql/mysql-files:/var/lib/mysql-files"
+      - "./mysql/conf:/etc/mysql/conf.d"
+      - "./mysql/data:/var/lib/mysql"
+      - "./mysql/mysql-files:/var/lib/mysql-files"
     environment:                        
       TZ: Asia/Shanghai
       LANG: en_US.UTF-8

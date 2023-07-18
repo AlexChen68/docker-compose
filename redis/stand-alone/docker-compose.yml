@@ -4,10 +4,10 @@ services:
     image: redis:latest
     container_name: redis                                    
     restart: unless-stopped       
-    command: redis-server /usr/local/etc/redis/redis.conf --requirepass 1qaz@wsx?S --appendonly no
+    command: redis-server /usr/local/etc/redis/redis.conf --appendonly no
     volumes:                                                      
-      - "/home/docker/redis/conf/redis.conf:/usr/local/etc/redis/redis.conf"
-      - "/home/docker/redis/data:/data"
+      - "./redis/conf/redis.conf:/usr/local/etc/redis/redis.conf"
+      - "./redis/data:/data"
     environment:                        
       TZ: Asia/Shanghai
       LANG: en_US.UTF-8
