@@ -5,10 +5,10 @@ services:
     container_name: mysql                                    
     restart: unless-stopped       
     volumes:                                                      
-      - "./mysql/conf:/etc/mysql/conf.d"
-      - "./mysql/data:/var/lib/mysql"
-      - "./mysql/mysql-files:/var/lib/mysql-files"
-      - "./mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d"
+      - "./conf:/etc/mysql/conf.d"
+      - "./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d"
+      - "./mount/data:/var/lib/mysql"
+      - "./mount/mysql-files:/var/lib/mysql-files"
     environment:                        
       TZ: Asia/Shanghai
       LANG: en_US.UTF-8
