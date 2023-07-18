@@ -1,4 +1,12 @@
 version: '3'
+
+networks:
+  kafka:
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.26.6.0/24"
+
 services:
   zookeeper:
     image: bitnami/zookeeper:latest
@@ -6,8 +14,12 @@ services:
     restart: unless-stopped
     environment:
       ALLOW_ANONYMOUS_LOGIN: yes
+    networks:
+      kafka:
+        ipv4_address: 172.26.6.11
     ports:
       - "2181:2181"
+
   kafka:
     image: bitnami/kafka:latest
     container_name: kafka
@@ -18,11 +30,14 @@ services:
       - "/etc/localtime:/etc/localtime" ## kafka 镜像和宿主机器之间时间保持一致
     environment:
       ALLOW_PLAINTEXT_LISTENER: yes
-      KAFKA_CFG_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_CFG_LISTENERS: PLAINTEXT://0.0.0.0:9092
-      KAFKA_CFG_ADVERTISED_LISTENERS: PLAINTEXT://139.159.230.161:9092
+      KAFKA_CFG_ZOOKEEPER_CONNECT: zookepper:2181
+      KAFKA_CFG_ADVERTISED_LISTENERS: PLAINTEXT://ecs.alexchen.tech:9092
+    networks:
+      kafka:
+        ipv4_address: 172.26.6.12
     ports:
       - "9092:9092"
+
   kafka-map:
     image: dushixiang/kafka-map:latest
     container_name: kafka-map
@@ -34,5 +49,8 @@ services:
     environment:
       DEFAULT_USERNAME: admin
       DEFAULT_PASSWORD: admin
+    networks:
+      kafka:
+        ipv4_address: 172.26.6.13
     ports:
       - "9192:8080"
