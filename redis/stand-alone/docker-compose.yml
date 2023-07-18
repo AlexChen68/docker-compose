@@ -6,8 +6,8 @@ services:
     restart: unless-stopped       
     command: redis-server /usr/local/etc/redis/redis.conf --appendonly no
     volumes:                                                      
-      - "./redis/conf/redis.conf:/usr/local/etc/redis/redis.conf"
-      - "./redis/data:/data"
+      - "./conf/redis.conf:/usr/local/etc/redis/redis.conf"
+      - "./mount/data:/data"
     environment:                        
       TZ: Asia/Shanghai
       LANG: en_US.UTF-8
