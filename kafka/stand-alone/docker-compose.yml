@@ -5,7 +5,7 @@ networks:
     ipam:
       driver: default
       config:
-        - subnet: "172.26.6.0/24"
+        - subnet: "172.22.6.0/24"
 
 services:
   zookeeper:
@@ -16,7 +16,7 @@ services:
       ALLOW_ANONYMOUS_LOGIN: yes
     networks:
       kafka:
-        ipv4_address: 172.26.6.11
+        ipv4_address: 172.22.6.1
     ports:
       - "2181:2181"
 
@@ -34,7 +34,7 @@ services:
       KAFKA_CFG_ADVERTISED_LISTENERS: PLAINTEXT://ecs.alexchen.tech:9092
     networks:
       kafka:
-        ipv4_address: 172.26.6.12
+        ipv4_address: 172.22.6.2
     ports:
       - "9092:9092"
 
@@ -51,6 +51,6 @@ services:
       DEFAULT_PASSWORD: admin
     networks:
       kafka:
-        ipv4_address: 172.26.6.13
+        ipv4_address: 172.22.6.3
     ports:
       - "9192:8080"
