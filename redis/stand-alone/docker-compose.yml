@@ -4,7 +4,7 @@ services:
     image: redis:latest
     container_name: redis                                    
     restart: unless-stopped       
-    command: bash -c "echo 1 > /proc/sys/vm/overcommit_memory && redis-server /usr/local/etc/redis/redis.conf --appendonly no" 
+    command: redis-server /usr/local/etc/redis/redis.conf --appendonly no
     volumes:                                                      
       - "./conf/redis.conf:/usr/local/etc/redis/redis.conf"
       - "./mount/data:/data"
