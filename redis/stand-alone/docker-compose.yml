@@ -11,6 +11,5 @@ services:
     environment:                        
       TZ: Asia/Shanghai
       LANG: en_US.UTF-8
-    command: 
     ports:
       - "16379:6379"
