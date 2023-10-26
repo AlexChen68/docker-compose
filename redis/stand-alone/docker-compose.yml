@@ -11,5 +11,6 @@ services:
     environment:                        
       TZ: Asia/Shanghai
       LANG: en_US.UTF-8
+    command: echo 1 > /proc/sys/vm/overcommit_memory
     ports:
       - "16379:6379"
