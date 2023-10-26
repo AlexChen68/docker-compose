@@ -4,13 +4,13 @@ services:
     image: redis:latest
     container_name: redis                                    
     restart: unless-stopped       
-    command: redis-server /usr/local/etc/redis/redis.conf --appendonly no
+    command: bash -c "echo 1 > /proc/sys/vm/overcommit_memory && redis-server /usr/local/etc/redis/redis.conf --appendonly no" 
     volumes:                                                      
       - "./conf/redis.conf:/usr/local/etc/redis/redis.conf"
       - "./mount/data:/data"
     environment:                        
       TZ: Asia/Shanghai
       LANG: en_US.UTF-8
-    command: echo 1 > /proc/sys/vm/overcommit_memory
+    command: 
     ports:
       - "16379:6379"
