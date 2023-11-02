@@ -11,6 +11,7 @@ services:
   zookeeper:
     image: bitnami/zookeeper:latest
     container_name: zookeeper
+    hostname: zookeeper
     restart: unless-stopped
     environment:
       ALLOW_ANONYMOUS_LOGIN: yes
@@ -23,6 +24,7 @@ services:
   kafka:
     image: bitnami/kafka:latest
     container_name: kafka
+    hostname: kafka
     restart: unless-stopped
     depends_on:
       - zookeeper
@@ -41,6 +43,7 @@ services:
   kafka-map:
     image: dushixiang/kafka-map:latest
     container_name: kafka-map
+    hostname: kafka-map
     restart: unless-stopped
     depends_on:
       - kafka
