@@ -32,7 +32,7 @@ services:
       - "/etc/localtime:/etc/localtime" ## kafka 镜像和宿主机器之间时间保持一致
     environment:
       ALLOW_PLAINTEXT_LISTENER: yes
-      KAFKA_CFG_ZOOKEEPER_CONNECT: zookepper:2181
+      KAFKA_CFG_ZOOKEEPER_CONNECT: 172.22.6.11:2181
       KAFKA_CFG_ADVERTISED_LISTENERS: PLAINTEXT://ecs.alexchen.tech:9092
     networks:
       kafka:
