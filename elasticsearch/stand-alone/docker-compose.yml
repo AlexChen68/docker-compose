@@ -6,13 +6,13 @@ networks:
 services:
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.17.7
-    container_name: elasticsearch
+    container_name: es
     restart: unless-stopped
     volumes:
       - "./config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml"
-      # - "./plugins:/usr/share/elasticsearch/plugins"
+      - "./plugins:/usr/share/elasticsearch/plugins"
       - "./mount/data:/usr/share/elasticsearch/data"
-      # - "./mount/logs:/usr/share/elasticsearch/logs"
+      - "./mount/logs:/usr/share/elasticsearch/logs"
     environment:
       TZ: Asia/Shanghai
       LANG: en_US.UTF-8
