@@ -6,14 +6,14 @@ networks:
 services:
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.17.7
-    container_name: elasticsearch             # 容器名为'elasticsearch'
-    restart: unless-stopped                   # 指定容器退出后的重启策略为始终重启，但是不考虑在 Docker 守护进程启动时就已经停止了的容器
-    volumes:                                  # 数据卷挂载路径设置，将本机目录映射到容器目录
+    container_name: elasticsearch
+    restart: unless-stopped
+    volumes:
       - "./config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml"
-      - "./plugins/ik:/usr/share/elasticsearch/plugins/ik"     # IK 中文分词插件
+      # - "./plugins:/usr/share/elasticsearch/plugins"
       - "./mount/data:/usr/share/elasticsearch/data"
-      - "./mount/logs:/usr/share/elasticsearch/logs"
-    environment:                              # 设置环境变量，相当于 docker run 命令中的-e
+      # - "./mount/logs:/usr/share/elasticsearch/logs"
+    environment:
       TZ: Asia/Shanghai
       LANG: en_US.UTF-8
       discovery.type: single-node
