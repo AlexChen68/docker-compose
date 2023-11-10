@@ -1,7 +1,7 @@
 # 表示允许所有主机访问
 network.host: 0.0.0.0
 # 关闭安全模块（8.x 版本才添加）
-xpack.security.enabled: false
-xpack.security.enrollment.enabled: false
-xpack.security.http.ssl.enabled: false
-xpack.security.transport.ssl.enabled: false
+# xpack.security.enabled: false
+# xpack.security.enrollment.enabled: false
+# xpack.security.http.ssl.enabled: false
+# xpack.security.transport.ssl.enabled: false
