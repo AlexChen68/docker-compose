@@ -1,1 +1,3 @@
 **/mount/
+elasticsearch/stand-alone/plugins/ik/*
+!elasticsearch/stand-alone/plugins/ik/elasticsearch-analysis-ik-7.17.7.zip
