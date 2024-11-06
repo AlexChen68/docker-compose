@@ -1,8 +1,8 @@
-version: '3' 
+# version: '3' 
 
 services:
   mysql:
-    image: registry.cn-shenzhen.aliyuncs.com/alexchen-images/mysql
+    image: registry.cn-shenzhen.aliyuncs.com/alexchen-images/mysql:8.0
     container_name: zeus-mysql                                    
     restart: unless-stopped       
     volumes:                                                      
