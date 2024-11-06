@@ -2,7 +2,7 @@ version: '3'
 
 services:
   mysql:
-    image: mysql:8.0.31
+    image: registry.cn-shenzhen.aliyuncs.com/alexchen-images/mysql
     container_name: mysql                                    
     restart: unless-stopped       
     volumes:                                                      

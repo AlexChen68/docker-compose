@@ -1,7 +1,7 @@
 version: '3'
 services:
   redis:
-    image: redis:7.0.14
+    image: registry.cn-shenzhen.aliyuncs.com/alexchen-images/redis
     container_name: redis                                    
     restart: unless-stopped       
     command: redis-server /usr/local/etc/redis/redis.conf --appendonly no
