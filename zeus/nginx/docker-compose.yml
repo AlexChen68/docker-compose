@@ -1,7 +1,6 @@
-version: '3'
 services:
   nginx:
-    image: registry.cn-shenzhen.aliyuncs.com/alexchen-images/nginx
+    image: registry.cn-shenzhen.aliyuncs.com/alexchen-images/nginx:1.21.1
     container_name: zeus-nginx
     restart: unless-stopped
     volumes:
