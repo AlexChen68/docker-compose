@@ -1,11 +1,11 @@
-version: '3'
+# version: '3'
 services:
   oracle18c:
     image: registry.cn-shenzhen.aliyuncs.com/alexchen-images/oracle18c:18.3.0-ee
     container_name: oracle18c
     restart: unless-stopped 
-    volumes:
-     - "./mount/oracle:/opt/oracle"
+    # volumes:
+    #  - "./mount/oracle:/opt/oracle"
     environment:
       TZ: Asia/Shanghai
       LANG: en_US.UTF-8
