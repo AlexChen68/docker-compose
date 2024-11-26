@@ -11,9 +11,7 @@ services:
     environment:                        
       TZ: Asia/Shanghai
       LANG: en_US.UTF-8
-      MYSQL_ROOT_PASSWORD: 2$WtV2iJW0X0iPLF
-      MYSQL_USER: zeus
-      MYSQL_PASSWORD: 2$WtV2iJW0X0iPLF
+      MYSQL_ROOT_PASSWORD: 18DFCFCE41A19DF1E634D09149D83B27
     privileged: true
     user: root
     ports:
