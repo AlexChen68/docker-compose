@@ -1,5 +1,5 @@
 services:
-  mysql:
+  clickhouse:
     image: registry.cn-shenzhen.aliyuncs.com/alexchen-images/clickhouse:latest
     container_name: clickhouse                                  
     restart: unless-stopped       
