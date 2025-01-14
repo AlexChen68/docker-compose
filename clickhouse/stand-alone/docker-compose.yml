@@ -1,0 +1,19 @@
+services:
+  mysql:
+    image: registry.cn-shenzhen.aliyuncs.com/alexchen-images/clickhouse:latest
+    container_name: clickhouse                                  
+    restart: unless-stopped       
+    ports:
+      - "8123:8123"
+      - "9090:9000"
+    volumes:
+      - "./mount/data:/var/lib/clickhouse"
+      - "./mount/log/:/var/log/clickhouse-server/"
+    environment:                        
+      TZ: Asia/Shanghai
+      LANG: en_US.UTF-8
+    ulimits:
+      nofile:
+        soft: 262144
+        hard: 262144
+    
