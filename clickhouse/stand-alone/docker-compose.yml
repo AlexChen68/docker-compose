@@ -7,6 +7,7 @@ services:
       - "8123:8123"
       - "9090:9000"
     volumes:
+      - "./mount/config/:/etc/clickhouse-server/"
       - "./mount/data:/var/lib/clickhouse"
       - "./mount/log/:/var/log/clickhouse-server/"
     environment:                        
