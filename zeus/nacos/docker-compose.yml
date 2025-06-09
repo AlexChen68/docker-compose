@@ -9,6 +9,8 @@ services:
     environment:
       - PREFER_HOST_MODE=hostname
       - MODE=standalone
+      - JVM_XMX=256m
+      - JVM_XMS=256m
       - SPRING_DATASOURCE_PLATFORM=mysql
       - MYSQL_SERVICE_HOST=127.0.0.1
       - MYSQL_SERVICE_DB_NAME=zeus_nacos
