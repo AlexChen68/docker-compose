@@ -104,7 +104,7 @@ services:
       - NACOS_AUTH_ENABLE=true
       - NACOS_AUTH_IDENTITY_KEY=nacos
       - NACOS_AUTH_IDENTITY_VALUE=nacos
-      - NACOS_AUTH_TOKEN=FBDC9K6u8eI0xtvoHUUbHsHuxBf0SjR5
+      - NACOS_AUTH_TOKEN=J3pldXMtbmFjb3MnIGlzIGEgYmFzZTY0IGNvZGUgc3RyaW5nIGZvciBuYWNvcw==
     privileged: true
     user: root
     ports:
