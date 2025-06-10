@@ -83,7 +83,7 @@ services:
       - zues-network
 ######################################### nacos #########################################
   nacos:
-    image: registry.cn-shenzhen.aliyuncs.com/alexchen-images/nacos-server:v2.4.3
+    image: registry.cn-shenzhen.aliyuncs.com/alexchen-images/nacos-server:v3.0.1
     container_name: zeus-nacos                                  
     restart: unless-stopped       
     volumes:      
