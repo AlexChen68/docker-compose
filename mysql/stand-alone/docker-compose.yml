@@ -1,8 +1,6 @@
-version: '3' 
-
 services:
   mysql:
-    image: registry.cn-shenzhen.aliyuncs.com/alexchen-images/mysql
+    image: registry.cn-shenzhen.aliyuncs.com/alexchen-images/mmysql:8.0
     container_name: mysql                                    
     restart: unless-stopped       
     volumes:                                                      
@@ -13,7 +11,7 @@ services:
     environment:                        
       TZ: Asia/Shanghai
       LANG: en_US.UTF-8
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: 18DFCFCE41A19DF1E634D09149D83B27
     privileged: true
     user: root
     ports:
