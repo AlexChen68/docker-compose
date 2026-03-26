@@ -1,0 +1,18 @@
+services:
+  kkfileview:
+    image: registry.cn-shenzhen.aliyuncs.com/alexchen-images/kkfileview:4.1.0
+    container_name: kkfileview
+    restart: unless-stopped
+    volumes:
+      - "./mount/file:/opt/kkfileview/file"
+      - "./mount/logs:/opt/kkfileview/logs"
+      - "./mount/repo:/opt/kkfileview/.m2/repository"
+    environment:
+      TZ: Asia/Shanghai
+      LANG: en_US.UTF-8
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1024m"
+    ports:
+      - "8010:8010"
